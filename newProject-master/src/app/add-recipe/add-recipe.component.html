@@ -1,0 +1,33 @@
+<div class="add-page">
+
+    <div class="name">
+        <label>Put the name:
+          <input #recipeName />
+        </label>
+    </div>
+
+    <div class="ingredients">
+        <label>Count the ingredients:
+          <input #recipeIngr />
+        </label>
+    </div>
+
+    <div class="recipe">
+        <label>How to cook it?:
+          <input #recipe />
+        </label>
+    </div>
+
+    <div class="image">
+      <label>Put the image's urls:
+        <input #img />
+      </label>
+    </div>
+
+    <div class="add">
+      <button (click)="add(recipeName.value,recipe.value,recipeIngr.value,img.value); recipeName.value=''; recipe.value=''; recipeIngr.value = ''; img.value=''">
+        Add recipe
+      </button>
+    </div>
+
+</div>

@@ -1,0 +1,56 @@
+<app-profile></app-profile>
+<div class="content">
+
+    <div class="data">
+      <p>Name: {{user.name}}</p>
+      <p>Last Name: {{user.last_name}}</p>
+      <p>Email: {{user.email}}</p>
+    </div>
+
+    <form>
+        <div class="firstname">
+          <label>Name:<br>
+            <input [ngModel]="user.name" name="firstname" placeholder="{{user.name}}" #name>
+          </label>
+        </div>
+
+        <div class="lastname">
+            <label>Last Name:<br>
+              <input [ngModel]="user.last_name" name="lastname" placeholder="{{user.last_name}}" #surname>
+            </label>
+        </div>
+
+        <div class="email">
+            <label>Email:<br>
+              <input [ngModel]="user.email" name="email" placeholder="{{user.email}}" #email>
+            </label>
+        </div>
+
+      <div class="edit">
+        <button (click)="change(name.value, surname.value, email.value)"> Edit the profile </button>
+      </div>
+
+    </form>
+
+    <div class="recipses">
+
+        <p> My recipes: </p>
+        <div class="products">
+            <div  class= "container">
+                <h3 *ngFor="let recipe of recipes">
+                    <a [title]="recipe.name + ' details'" [routerLink]="'/recipes/' + recipe.id">
+                      {{ recipe.name }}
+                    </a>
+                    <img src = "{{recipe.image}}">
+                </h3>
+            </div>
+
+      </div>
+
+      <div class="delete">
+        <button [routerLink]="['/']" type="button">Log out</button>
+      </div>
+
+    </div>
+</div>
+

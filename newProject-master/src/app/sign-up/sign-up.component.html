@@ -1,0 +1,36 @@
+<body>
+  <form>
+      <div class="signup">
+
+          <div class="segment">
+            <h1>Create your account</h1>
+          </div>
+
+          <div class="username">
+              <label>
+                <input type="text" placeholder="Username" [ngModel]="username"/>
+              </label>
+          </div>
+
+          <div class="email">
+                <label>
+                  <input type="text" placeholder="Email address" [ngModel]="email"/>
+                </label>
+          </div>
+
+          <div class="password">
+                <label>
+                  <input type="password" placeholder="Password" [ngModel]="password"/>
+                </label>
+          </div>
+
+          <div class="sign">
+            <button (click)="signUp()" [routerLink]="['/']" type="button"><i class="fas fa-lock"></i> Sign up</button>
+          </div>
+
+          <div class="have">
+            <button [routerLink]="['/login']" class="new" type="button">Have an account?</button>
+          </div>
+      </div>
+  </form>
+</body>

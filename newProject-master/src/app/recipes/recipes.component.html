@@ -1,0 +1,21 @@
+<div class="recipes">
+  <p>RECIPES</p>
+  <div class="products">
+      <div class="product" *ngFor="let recipe of recipes">
+        <div *ngIf="recipe.id % 2 != 0" class="right">
+          <img src = "{{recipe.image}}">
+          <a [title]="recipe.name + ' details'" [routerLink]="[recipe.id]">
+            {{ recipe.name }}
+          </a>
+        </div>
+        <div *ngIf="recipe.id % 2 === 0" class="left">
+          <a [title]="recipe.name + ' details'" [routerLink]="[recipe.id]">
+            {{ recipe.name }}
+          </a>
+          <img src = "{{recipe.image}}">
+        </div>
+      </div>
+  </div>
+</div>
+
+

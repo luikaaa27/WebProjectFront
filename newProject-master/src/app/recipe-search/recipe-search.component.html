@@ -1,0 +1,8 @@
+<div class="searchBox">
+  <p> You can search recipes here </p>
+  <input class="inputBox" type="text" placeholder =" Search... " #descr>
+  <button (click)="search(descr.value); descr.value=''">
+    Search
+  </button>
+</div>
+<a routerLink="/recipes/{{neededRecipe.id}}" style="color : black">{{neededRecipe.name}}</a>

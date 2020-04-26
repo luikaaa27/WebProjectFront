@@ -1,0 +1,53 @@
+.recipes {
+  width: 100%;
+  height: border-box;
+  background-color: #ece1e7;
+  padding: 3%;
+  border: #765371 18px dashed;
+  margin-top: 5%;
+}
+p {
+  font-size: 45px;
+  text-align: center;
+}
+
+.products img{
+  width: 250px;
+  height: 250px;
+  border: black solid 5px;
+}
+.product{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.right {
+  margin-left: 55%;
+  margin-top: -250px;
+  display: flex;
+  justify-content: space-around;
+}
+.left {
+  display: flex;
+  justify-content: space-around;
+}
+.right a {
+  font-size: 20px;
+  text-align: right;
+  width: 100px;
+}
+.left img {
+  display: flex;
+  margin-left: 10px;
+}
+.left a {
+  font-size: 20px;
+  text-align: left;
+  width: 100px;
+  margin-left: 10px;
+}
+.right img {
+  display: flex;
+  margin-right: 10px;
+  flex-direction: row;
+}

@@ -1,0 +1,27 @@
+<body>
+      <div class="loggin">
+          <div class="signin">
+              <p> Sign in </p>
+          </div>
+
+          <div class="input1">
+            <label>
+              <input type="text" [ngModel]= "username" placeholder="Username" required/>
+            </label>
+          </div>
+
+          <div class="input2">
+            <label>
+              <input type="password" [ngModel]="password" placeholder="Password" required/>
+            </label>
+          </div>
+
+          <div class="login">
+            <button  type="submit" (click)="login()">Log in</button>
+          </div>
+
+          <div class="create">
+            <button [routerLink]="['/signup']"  type="button">Create an account</button>
+          </div>
+      </div>
+</body>

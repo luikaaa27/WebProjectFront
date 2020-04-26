@@ -1,0 +1,27 @@
+.categories {
+  width: 100%;
+  height: border-box;
+  padding: 3%;
+  border: #765371 18px dashed;
+  margin-top: 5%;
+  background-image: url("https://image.freepik.com/free-photo/breakfast-food-standing-right-side_23-2147678783.jpg");
+  background-size: cover;
+}
+.category {
+  padding: 1%;
+}
+p {
+  padding-bottom: 10px;
+  color: black;
+  margin-left: 10%;
+  font-size: 30px;
+}
+ul {
+  margin-left: 11%;
+}
+a {
+  font-size: 20px;
+  text-decoration: none;
+  color: indigo;
+}
+

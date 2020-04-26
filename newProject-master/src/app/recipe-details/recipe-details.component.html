@@ -1,0 +1,51 @@
+
+<div class="recipe-detail">
+
+    <div class="details">
+
+        <h1>{{ recipe.name }}</h1>
+
+        <h3>Ingredients: </h3>
+        <p> {{recipe.ingredients}} </p>
+
+        <h3>Description: </h3>
+        <p>{{recipe.description}}</p>
+
+    </div>
+
+    <div class="info">
+
+        <div class="photo">
+          <img src="{{recipe.image}}">
+        </div>
+
+        <div class="changing">
+
+            <p>You can change description of recipe:</p>
+
+            <div class="ingr">
+              <p>Ingredients: <br>
+                <textarea name="ingredients" cols="45" [ngModel]="recipe.ingredients" #ingr></textarea>
+              </p>
+              <!--<input placeholder ="Ingredients" [ngModel]="recipe.ingredients" type="text" #ingr [required]>-->
+            </div>
+
+            <div class="desc">
+              <p>Description: <br>
+                <textarea name="description" cols="45" [ngModel]="recipe.description" #descr></textarea>
+              </p>
+              <!--<input [ngModel]="recipe.description" type="text" placeholder ="New Description" #descr [required]>-->
+            </div>
+
+            <div class="change">
+              <button (click)="change(descr.value,ingr.value);"> Change </button>
+            </div>
+
+        </div>
+
+        <!--<button (click)="delete()">
+            Delete
+          </button>-->
+    </div>
+
+</div>

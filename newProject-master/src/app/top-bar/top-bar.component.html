@@ -1,0 +1,21 @@
+<a routerLink="/"><h1>Recipe Book</h1></a>
+<a routerLink="/categories"><p>Categories</p></a>
+<a routerLink="/recipes"><p>Recipes</p></a>
+
+  <div class="buttons">
+    <button  *ngIf="!logged" [routerLink]="['/login']" type="button">Login</button>
+  </div>
+  <div class="buttons">
+    <button *ngIf="!logged" [routerLink]="['/signup']" type="button">Sign up</button>
+  </div>
+  <div class="buttons">
+    <button *ngif="logged" [routerLink]="['/profile']" class="unit" type="button">Profile</button>
+  </div>
+  <div class="buttons">
+    <button *ngif="logged" (click)="logout()"  class="unit" type="button">Log out</button>
+  </div>
+<div class="adding">
+  <button *ngif="logged" [routerLink]="['/recipe/add']">
+    Add recipe
+  </button>
+</div>
