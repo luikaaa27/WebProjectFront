@@ -13,7 +13,7 @@ export interface Category {
 }
 export interface User {
   id: number;
-  login: string;
+  username: string;
   password: string;
   name: string;
   last_name: string;

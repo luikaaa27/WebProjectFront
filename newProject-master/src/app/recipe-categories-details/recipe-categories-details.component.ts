@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {RecipeService} from '../recipe.service';
+import {Category} from "../models";
 
 @Component({
   selector: 'app-recipe-categories-details',
@@ -8,12 +9,12 @@ import {RecipeService} from '../recipe.service';
   styleUrls: ['./recipe-categories-details.component.css']
 })
 export class RecipeCategoriesDetailsComponent implements OnInit {
-  categoriesWithRecipes: any;
+  categories: Category[];
   constructor(public categoriesService: RecipeService, private route: ActivatedRoute) {}
   ngOnInit(): void {
-    this.getAlternativeProducts();
+    this.getCategoryList();
   }
-  getAlternativeProducts() {
-    this.categoriesService.getAlternativeProductList().subscribe(products => this.categoriesWithRecipes = products);
+  getCategoryList() {
+    this.categoriesService.getCategoryList().subscribe(products => this.categories = products);
   }
 }

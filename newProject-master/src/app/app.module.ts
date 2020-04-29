@@ -17,6 +17,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
 import { RecipeSearchComponent } from './recipe-search/recipe-search.component';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
+import { CategoryDetailsComponent } from './category-details/category-details.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AddRecipeComponent } from './add-recipe/add-recipe.component';
     ProfileDetailComponent,
     RecipeSearchComponent,
     AddRecipeComponent,
+    CategoryDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,7 @@ import { AddRecipeComponent } from './add-recipe/add-recipe.component';
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'categories', component: RecipeCategoriesDetailsComponent},
+      {path: 'categories/:id', component: CategoryDetailsComponent},
       {path: 'recipes/:id', component: RecipeDetailsComponent},
       {path: 'recipes', component: RecipesComponent},
       {path: 'login', component: LogInComponent},

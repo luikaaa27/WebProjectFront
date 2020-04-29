@@ -10,21 +10,21 @@ import {myRecipes} from './myRecipes';
   providedIn: 'root'
 })
 export class RecipeService {
+  BASE_URL = 'http://127.0.0.1:8000';
   recipes: Recipe[] = RECIPES.concat(myRecipes) ;
   categories: Category[] = CATEGORIES;
 
+  constructor(private http: HttpClient) {
+  }
   getRecipeList(): Observable<Recipe[]> {
-    this.recipes = RECIPES.concat(myRecipes);
-    return of(this.recipes);
+    return this.http.get<Recipe[]>(`${this.BASE_URL}/api/recipes/`);
   }
-  getCategoryList(): Observable<Category[]> {
-    return of(this.categories);
+  getRecipeById(id): Observable<Recipe> {
+    return this.http.get<Recipe>(`${this.BASE_URL}/api/recipes/${id}/`);
   }
-  getRecipeById(id): Observable<any> {
-    const productWeNeed = this.recipes.find((recipe: any) => recipe.id === id);
-    return of(productWeNeed);
+  delete(id: number): Observable<Recipe> {
+    return this.http.delete<Recipe>(`${this.BASE_URL}/api/recipes/${id}/`);
   }
-
   initCategories() {
     this.categories.forEach((category: any) => category.recipes = this.recipes
       .filter(product => product.categoryId === category.id));
@@ -34,5 +34,24 @@ export class RecipeService {
     this.initCategories();
     return of(this.categories);
   }
-
+  addRecipe(name, ingredients, description, rating, image, categoryId, owner): Observable <Recipe> {
+    return this.http.post<Recipe>(`${this.BASE_URL}/api/recipes/`, {
+      name,
+      ingredients,
+      description,
+      rating,
+      image,
+      categoryId,
+      owner
+    });
+  }
+  search(name: string): Observable<Recipe[]> {
+    return this.http.get<Recipe[]>(`${this.BASE_URL}/api/recipes/search/${name}/`);
+  }
+  getCategoryList(): Observable<Category[]> {
+    return this.http.get<Category[]>(`${this.BASE_URL}/api/categories/`);
+  }
+  getCategory(id: number): Observable<Recipe[]> {
+    return this.http.get<Recipe[]>(`${this.BASE_URL}/api/categories/${id}/recipes`);
+  }
 }

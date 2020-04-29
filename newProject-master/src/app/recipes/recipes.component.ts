@@ -13,12 +13,14 @@ export class RecipesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getProducts();
+    this.getRecipes();
   }
 
-  getProducts() {
-    // tslint:disable-next-line:no-shadowed-variable
-    this.recipeService.getRecipeList().subscribe((products) => this.recipes = products);
+  getRecipes() {
+    this.recipeService.getRecipeList().
+    subscribe((
+      products
+    ) => this.recipes = products);
   }
 
 }

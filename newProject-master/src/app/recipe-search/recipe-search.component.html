@@ -1,8 +1,18 @@
-<div class="searchBox">
+<!--<div class="searchBox">
   <p> You can search recipes here </p>
-  <input class="inputBox" type="text" placeholder =" Search... " #descr>
-  <button (click)="search(descr.value); descr.value=''">
+  <input class="inputBox" type="text" placeholder =" Search... " [(ngModel)]="name">
+  <button (click)="search()">
     Search
   </button>
 </div>
-<a routerLink="/recipes/{{neededRecipe.id}}" style="color : black">{{neededRecipe.name}}</a>
+-->
+<div class="searchBox">
+  <p>You can search recipes here by name</p>
+  <input class="inputBox" type="text" [(ngModel)]="name">
+  <button (click)="onSubmit()">Search</button>
+  <ul *ngFor="let recipe of recipes">
+    <li>
+      <a [routerLink]="['recipes/'+ recipe.id]">{{recipe.id}} - {{recipe.name}}</a>
+    </li>
+  </ul>
+</div>

@@ -12,12 +12,17 @@ import {RECIPES} from '../recipes';
 export class RecipeSearchComponent implements OnInit {
 
   constructor(private recipeService: RecipeService) { }
-  neededRecipe: Recipe;
+  recipes: Recipe[];
+  name: string;
   ngOnInit(): void {
+    this.name = '';
   }
-  search(name): void {
-    const recipeWeNeed = RECIPES.find((recipe: any) => recipe.name === name);
-    this.neededRecipe = recipeWeNeed;
+  private search() {
+    this.recipes = [];
+    this.recipeService.search(this.name)
+      .subscribe(recipes => this.recipes = recipes);
   }
-
+  onSubmit() {
+    this.search();
+  }
 }

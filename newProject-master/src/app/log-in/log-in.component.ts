@@ -3,6 +3,7 @@ import {users} from '../users';
 import { FormGroup, FormControl } from '@angular/forms';
 import {LoginService} from '../login.service';
 import {Location} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -12,12 +13,14 @@ import {Location} from '@angular/common';
 export class LogInComponent implements OnInit {
   username = '';
   password = '';
-
+  logged = this.loginService.logged;
   constructor(private loginService: LoginService,
-              private location: Location) {
+              private route: Router) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    console.log(this.logged);
+    console.log(this.loginService.logged);
     const token = localStorage.getItem('token');
     if (token) {
       this.loginService.logged = true;
@@ -30,7 +33,11 @@ export class LogInComponent implements OnInit {
         this.loginService.logged = true;
         this.username = '';
         this.password = '';
-        this.location.back();
+        this.route.navigate(['/']);
       });
+  }
+  logout() {
+    localStorage.clear();
+    this.logged = false;
   }
 }

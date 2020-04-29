@@ -2,30 +2,30 @@
 
     <div class="name">
         <label>Put the name:
-          <input #recipeName />
+          <input type="text" [(ngModel)]="name">
         </label>
     </div>
 
     <div class="ingredients">
         <label>Count the ingredients:
-          <input #recipeIngr />
+          <input type="text" [(ngModel)]="ingredients">
         </label>
     </div>
 
     <div class="recipe">
         <label>How to cook it?:
-          <input #recipe />
+          <input type="text" [(ngModel)]="description">
         </label>
     </div>
 
     <div class="image">
       <label>Put the image's urls:
-        <input #img />
+        <input type="text" [(ngModel)]="image">
       </label>
     </div>
 
     <div class="add">
-      <button (click)="add(recipeName.value,recipe.value,recipeIngr.value,img.value); recipeName.value=''; recipe.value=''; recipeIngr.value = ''; img.value=''">
+      <button (click)="add()">
         Add recipe
       </button>
     </div>

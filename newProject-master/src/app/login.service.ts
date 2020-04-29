@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {LoginResponse, SignUpResponse} from './models';
+import {LoginResponse, SignUpResponse, User} from './models';
 import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  BASE_URL = 'http://127.0.0.1:8000';
+  BASE_URL = 'http://localhost:8000';
   constructor(private http: HttpClient) { }
   logged = false;
 
@@ -17,10 +17,14 @@ export class LoginService {
       password
     });
   }
-  signUp(username, password): Observable<SignUpResponse> {
-    return this.http.post<SignUpResponse>(`${this.BASE_URL}/api/signup/`, {
+  signUp(username, password, email): Observable<SignUpResponse> {
+    return this.http.post<SignUpResponse>(`${this.BASE_URL}/api/register/`, {
       username,
-      password
+      password,
+      email
     });
+  }
+  getUser(): Observable<User> {
+    return this.http.get<User>(`${this.BASE_URL}/api/user/profile/`);
   }
 }

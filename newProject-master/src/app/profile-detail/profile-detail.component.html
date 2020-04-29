@@ -2,37 +2,29 @@
 <div class="content">
 
     <div class="data">
-      <p>Name: {{user.name}}</p>
-      <p>Last Name: {{user.last_name}}</p>
-      <p>Email: {{user.email}}</p>
+      <p>Name: {{user.username}}</p>
     </div>
 
     <form>
         <div class="firstname">
           <label>Name:<br>
-            <input [ngModel]="user.name" name="firstname" placeholder="{{user.name}}" #name>
+            <input [ngModel]="username" name="firstname">
           </label>
         </div>
-
-        <div class="lastname">
-            <label>Last Name:<br>
-              <input [ngModel]="user.last_name" name="lastname" placeholder="{{user.last_name}}" #surname>
-            </label>
-        </div>
-
+<!--
         <div class="email">
             <label>Email:<br>
-              <input [ngModel]="user.email" name="email" placeholder="{{user.email}}" #email>
+              <input [ngModel]="user.email" name="email">
             </label>
         </div>
-
+-->
       <div class="edit">
-        <button (click)="change(name.value, surname.value, email.value)"> Edit the profile </button>
+        <button (click)="save()"> Edit the name </button>
       </div>
 
     </form>
 
-    <div class="recipses">
+    <!--<div class="recipses">
 
         <p> My recipes: </p>
         <div class="products">
@@ -46,11 +38,9 @@
             </div>
 
       </div>
-
-      <div class="delete">
-        <button [routerLink]="['/']" type="button">Log out</button>
-      </div>
-
-    </div>
-</div>
+-->
+  <div class="delete">
+    <button [routerLink]="['/']" type="button" (click)="logOut()">Log out</button>
+  </div>
+   </div>
 

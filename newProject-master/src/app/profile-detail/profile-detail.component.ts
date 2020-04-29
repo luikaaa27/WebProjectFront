@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {user} from '../users';
 import {myRecipes} from '../myRecipes';
+import {LoginService} from '../login.service';
+import {Observable} from 'rxjs';
+import {User} from '../models';
 
 @Component({
   selector: 'app-profile-detail',
@@ -8,14 +10,23 @@ import {myRecipes} from '../myRecipes';
   styleUrls: ['./profile-detail.component.css']
 })
 export class ProfileDetailComponent implements OnInit {
-  user = user;
-  recipes = myRecipes;
-  constructor() { }
+  logged;
+  user: User;
+  username='';
+  constructor(private loginService: LoginService) { }
   ngOnInit(): void {
+    this.getUser();
   }
-  change(value: string, value2: string, value3: string) {
-    this.user.name = value;
-    this.user.last_name = value2;
-    this.user.email = value3;
+  getUser(): void {
+    this.loginService.getUser().
+    subscribe(user => this.user = user);
+  }
+    logOut() {
+    localStorage.clear();
+    this.logged = false;
+    this.loginService.logged = false;
+  }
+  save() {
+    this.user.username = this.username;
   }
 }
