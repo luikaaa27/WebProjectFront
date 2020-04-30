@@ -12,7 +12,6 @@ import {User} from '../models';
 export class ProfileDetailComponent implements OnInit {
   logged;
   user: User;
-  username='';
   constructor(private loginService: LoginService) { }
   ngOnInit(): void {
     this.getUser();
@@ -21,12 +20,13 @@ export class ProfileDetailComponent implements OnInit {
     this.loginService.getUser().
     subscribe(user => this.user = user);
   }
-    logOut() {
+  logOut() {
     localStorage.clear();
     this.logged = false;
     this.loginService.logged = false;
   }
   save() {
-    this.user.username = this.username;
+    alert('Your request has been received. Please, wait for confirm letter');
+    this.loginService.putUser(this.user.username, this.user.email).subscribe();
   }
 }

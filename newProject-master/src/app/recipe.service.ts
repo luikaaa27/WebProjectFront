@@ -54,4 +54,9 @@ export class RecipeService {
   getCategory(id: number): Observable<Recipe[]> {
     return this.http.get<Recipe[]>(`${this.BASE_URL}/api/categories/${id}/recipes`);
   }
+  change(recipe: Recipe, id: number): Observable<Recipe> {
+    return this.http.post<Recipe>(`${this.BASE_URL}/api/recipes/${id}/`, {
+      recipe
+    });
+  }
 }

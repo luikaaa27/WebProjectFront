@@ -27,4 +27,10 @@ export class LoginService {
   getUser(): Observable<User> {
     return this.http.get<User>(`${this.BASE_URL}/api/user/profile/`);
   }
+  putUser(username, email): Observable<User> {
+    return this.http.put<User>(`${this.BASE_URL}/api/user/profile/`, {
+      username,
+      email
+    });
+  }
 }

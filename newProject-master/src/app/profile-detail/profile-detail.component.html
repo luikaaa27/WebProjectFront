@@ -3,21 +3,22 @@
 
     <div class="data">
       <p>Name: {{user.username}}</p>
+      <p>Email: {{user.email}}</p>
     </div>
 
     <form>
         <div class="firstname">
           <label>Name:<br>
-            <input [ngModel]="username" name="firstname">
+            <input [(ngModel)]="user.username" name="firstname">
           </label>
         </div>
-<!--
+
         <div class="email">
             <label>Email:<br>
               <input [ngModel]="user.email" name="email">
             </label>
         </div>
--->
+
       <div class="edit">
         <button (click)="save()"> Edit the name </button>
       </div>

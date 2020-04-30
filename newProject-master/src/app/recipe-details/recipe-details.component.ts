@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {RecipeService} from '../recipe.service';
 import {Recipe, RECIPES} from '../recipes';
 import {Location} from '@angular/common';
-import {LoginService} from "../login.service";
+import {LoginService} from '../login.service';
 
 @Component({
   selector: 'app-recipe-details',
@@ -11,20 +11,25 @@ import {LoginService} from "../login.service";
   styleUrls: ['./recipe-details.component.css']
 })
 export class RecipeDetailsComponent implements OnInit {
-  recipe: Recipe;
   constructor(private route: ActivatedRoute , public recipeService: RecipeService, private router: Router,
-              private loginService: LoginService) {}
+              public loginService: LoginService) {}
+  recipe: Recipe;
+
+  id = +this.route.snapshot.paramMap.get('id');
   ngOnInit() {
     this.getRecipe();
   }
-
   getRecipe(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.recipeService.getRecipeById(id).subscribe(item => this.recipe = item);
+    this.recipeService.getRecipeById(this.id).subscribe(item => this.recipe = item);
   }
-  change(newDescription, newIngr) {
+  /*
+  change() {
     this.recipe.description = newDescription;
     this.recipe.ingredients = newIngr;
+  }*/
+  change() {
+    this.recipeService.change(this.recipe, this.id).subscribe();
+    alert('Your request received! Wait for confirming.');
   }
 
   /* delete(): void {

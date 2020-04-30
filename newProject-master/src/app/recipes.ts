@@ -27,9 +27,16 @@ export const RECIPES: Recipe[] = [
       'Kosher salt and freshly cracked black pepper',
     description: 'Preheat the oven to 350 degrees F. Cut the pitas into 6 wedges. \n' +
       // tslint:disable-next-line:max-line-length
-      'In a medium saucepan, add the butter and garlic. Set over medium heat and warm through until the butter melts and the garlic becomes fragrant, 5 to 6 minutes. Add the parsley and mix well.\n' +
+      'In a medium saucepan, add the butter and garlic. Set over medium heat and warm through until the butter melts' +
+      ' and the garlic becomes fragrant, ' +
+      '5 to 6 minutes. ' +
+      'Add the parsley and mix well.\n' +
       // tslint:disable-next-line:max-line-length
-      'Place the pita wedges in a large bowl and pour the garlic butter over the top. Toss well to combine and coat everything evenly. Spread the pita wedges out evenly on a sheet tray and dust with the grated Parmesan. Bake in the oven until golden and crispy, 12 to 15 minutes. Remove from the oven and taste. Adjust seasonings with salt and pepper, if necessary. Serve warm.',
+      'Place the pita wedges in a large bowl and pour the garlic butter over the top. ' +
+      'Toss well to combine and coat everything evenly. ' +
+      'Spread the pita wedges out evenly on a sheet tray and dust with the grated Parmesan. ' +
+      'Bake in the oven until golden and crispy, 12 to 15 minutes.' +
+      ' Remove from the oven and taste. Adjust seasonings with salt and pepper, if necessary. Serve warm.',
     rating : 4,
     image: 'https://vaya.in/recipes/wp-content/uploads/2019/03/Garlic-Pita-Bread-Bites.jpg',
   },
@@ -59,11 +66,27 @@ export const RECIPES: Recipe[] = [
       '\n' +
       '2 teaspoons vanilla extract',
     // tslint:disable-next-line:max-line-length
-    description: 'Preheat the oven to 350 degrees F. Coat two 9-inch-round cake pans with cooking spray and line the bottoms with parchment paper.\n' +
+    description: 'Preheat the oven to 350 degrees F. ' +
+      'Coat two 9-inch-round cake pans with cooking spray ' +
+      'and line the bottoms with parchment paper.\n' +
       // tslint:disable-next-line:max-line-length
-      'Whisk the cocoa powder and 1 1/2 cups boiling water in a medium bowl until smooth; set aside. Whisk the flour, sugar, baking powder, baking soda and salt in a large bowl until combined. Add the eggs, vegetable oil, sour cream and vanilla and beat with a mixer on medium speed until smooth, about 1 minute. Reduce the mixer speed to low; beat in the cocoa mixture in a steady stream until just combined, then finish mixing with a rubber spatula. (The batter will be thin.)\n' +
+      'Whisk the cocoa powder and 1 1/2 cups boiling water in a ' +
+      'medium bowl until smooth; set aside. Whisk the flour, sugar, ' +
+      'baking powder, baking soda and salt in a large bowl until combined. ' +
+      'Add the eggs, vegetable oil, sour cream and vanilla and beat with a' +
+      ' mixer on medium speed until smooth, about 1 minute.' +
+      ' Reduce the mixer speed to low; beat in the cocoa mixture in ' +
+      'a steady stream until just combined, then finish mixing ' +
+      'with a rubber spatula. (The batter will be thin.)\n' +
       // tslint:disable-next-line:max-line-length
-      'Divide the batter between the prepared pans and tap the pans against the counter to help the batter settle. Bake until a toothpick inserted into the middle comes out clean, 30 to 40 minutes. Transfer to racks and let cool 10 minutes, then run a knife around the edge of the pans and turn the cakes out onto the racks to cool completely. Remove the parchment. Trim the tops of the cakes with a long serrated knife to make them level, if desired.',
+      'Divide the batter between the prepared pans ' +
+      'and tap the pans against the counter to help the batter settle.' +
+      ' Bake until a toothpick inserted into the middle comes out clean,' +
+      ' 30 to 40 minutes. Transfer to racks and let cool 10 minutes, ' +
+      'then run a knife around the edge of the pans and turn the cakes out ' +
+      'onto the racks to cool completely. Remove the parchment. ' +
+      'Trim the tops of the cakes with a long serrated knife to make' +
+      ' them level, if desired.',
     rating: 5,
     // tslint:disable-next-line:max-line-length
     image: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2F1532533774%2Fmoms-chocolate-cake-XL-RECIPE0918.jpg',
@@ -219,10 +242,16 @@ export const RECIPES: Recipe[] = [
     id: 13,
     categoryId: 1,
     // tslint:disable-next-line:max-line-length
-    description: 'Sift together flour, baking powder, and salt. Set aside. Place butter and sugar in large bowl of electric stand mixer and beat until light in color. Add egg and milk and beat to combine. Put mixer on low speed, gradually add flour, and beat until mixture pulls away from the side of the bowl. Divide the dough in half, wrap in waxed paper, and refrigerate for 2 hours.\n' +
+    description: 'Sift together flour, baking powder, and salt. Set aside. ' +
+      'Place butter and sugar in large bowl of electric stand mixer and beat until light in color.' +
+      ' Add egg and milk and beat to combine. Put mixer on low speed, gradually add flour, and beat until mixture pulls away from the side of the bowl.' +
+      ' Divide the dough in half, wrap in waxed paper, and refrigerate for 2 hours.\n' +
       'Preheat oven to 375 degrees F.\n' +
       // tslint:disable-next-line:max-line-length
-      'Sprinkle surface where you will roll out dough with powdered sugar. Remove 1 wrapped pack of dough from refrigerator at a time, sprinkle rolling pin with powdered sugar, and roll out dough to 1/4-inch thick. Move the dough around and check underneath frequently to make sure it is not sticking. If dough has warmed during rolling, place cold cookie sheet on top for 10 minutes to chill. Cut into desired shape, place at least 1-inch apart on greased baking sheet, parchment, or silicone baking mat, and bake for 7 to 9 minutes or until cookies are just beginning to turn brown around the edges, rotating cookie sheet halfway through baking time. Let sit on baking sheet for 2 minutes after removal from oven and then move to complete cooling on wire rack. Serve as is or ice as desired. Store in airtight container for up to 1 week.',
+      'Sprinkle surface where you will roll out dough with powdered sugar.' +
+      ' Remove 1 wrapped pack of dough from refrigerator at a time, sprinkle rolling pin with powdered sugar, ' +
+      'and roll out dough to 1/4-inch thick. Move the dough around and check underneath frequently to make sure it is not sticking. ' +
+      'If dough has warmed during rolling, place cold cookie sheet on top for 10 minutes to chill. Cut into desired shape, place at least 1-inch apart on greased baking sheet, parchment, or silicone baking mat, and bake for 7 to 9 minutes or until cookies are just beginning to turn brown around the edges, rotating cookie sheet halfway through baking time. Let sit on baking sheet for 2 minutes after removal from oven and then move to complete cooling on wire rack. Serve as is or ice as desired. Store in airtight container for up to 1 week.',
     ingredients: '3 cups all-purpose flour\n' +
       '\n' +
       '3/4 teaspoon baking powder\n' +

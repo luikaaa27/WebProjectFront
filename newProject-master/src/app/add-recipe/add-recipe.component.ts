@@ -36,7 +36,7 @@ export class AddRecipeComponent implements OnInit {
     myRecipes.push({categoryId: null, id: Math.random(), name, description, ingredients, rating: 0, image});
   }*/
   add() {
-    this.recipeService.addRecipe(this.name, this.ingredients, this.description, 0, this.image, 2, 1)
+    this.recipeService.addRecipe(this.name, this.ingredients, this.description, 0, this.image, 8, 1)
       .subscribe(res => {
           alert('Recipe created successfully');
           this.route.navigate(['/recipes/']);
